@@ -21,6 +21,7 @@ form.addEventListener('submit', function (e) {
     let motivo = document.getElementById('motivo').value;
     let termo = document.getElementById('termo').checked;
 
+
     document.getElementById('erroNome').textContent = '';
     document.getElementById('erroEmail').textContent = '';
     document.getElementById('erroTelefone').textContent = '';
@@ -47,7 +48,7 @@ form.addEventListener('submit', function (e) {
         valido = false;
     }
 
-    if (cpf === " " && cpf.length < 11) {
+    if (cpf === " " || cpf.length < 11) {
 
         document.getElementById('erroCpf').textContent = "CPF é obrigatório e deve conter 11 dígitos";
         valido = false;
@@ -58,25 +59,25 @@ form.addEventListener('submit', function (e) {
         valido = false;
     }
 
-    if (cidade === " ") {
+    if (cidade === "") {
 
         document.getElementById('erroCidade').textContent = 'Insira uma cidade para continuar';
         valido = false;
     }
 
-    if (tipoMoradia === "selecione") {
+    if (tipoMoradia === "") {
 
         alert("Insira o tipo de moradia para continua")
         valido = false;
     }
 
-    if (tipoMoradia === 'casa' && quintal === "selecione") {
+    if (tipoMoradia === 'casa' && quintal === "") {
 
         alert("Responda se tem quintal em sua moradia para continua")
         valido = false;
     }
 
-    if (antes === "selecione") {
+    if (antes === "") {
 
         alert("Responda se você já teve algum outro animal de estimação antes para continua")
         valido = false;
@@ -88,22 +89,26 @@ form.addEventListener('submit', function (e) {
         valido = false;
     }
 
-    if (tipoMoradia === 'ap' && permite === 'selecione') {
+    if (tipoMoradia === 'ap' || permite === '') {
 
         alert("Você precisa responder se o seu apartamento permite pets")
         valido = false;
     }
 
-    if (quintal === 'sim' && seguro === 'selecione') {
+    if (quintal === 'sim' && seguro === '') {
 
         alert("Você precisa responder se seu quintal é seguro")
+        valido = false;
+    }
+
+    if (!termo) {
+        document.getElementById('erroTermo').textContent = "Você precisa aceitar o termo";
         valido = false;
     }
 
     if (valido) {
 
         let resultado = document.getElementById('resultado');
-
 
         resultado.innerHTML = `
 
@@ -114,7 +119,7 @@ form.addEventListener('submit', function (e) {
         CPF: ${cpf} <br>
         Idade: ${idade} <br>
         Cidade: ${cidade} <br>
-        Moradia: ${moradia} <br>
+        Tipo de Moradia: ${tipoMoradia} <br>
         Permite: ${permite} <br>
         Seguro: ${seguro} <br>
         Horas: ${horas} <br>
