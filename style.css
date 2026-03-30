@@ -1,0 +1,24 @@
+body{
+    background-image: url(assets/cao\ rua.jpg);
+    background-position: center;
+    margin: 0%;
+    justify-content: right;
+    align-items: right;
+}
+
+.container{
+    background-color:rgba(209, 202, 165, 0.514) ;
+    align-items: center;
+    justify-content: right;
+    height: 700;
+    width: 600;
+    padding: 20px;
+    margin-top: 100px;
+    border-radius: 10px;
+    margin-left: 1100;
+}
+
+.titulo{
+    color: rgb(58, 25, 2);
+    justify-content: center;
+}

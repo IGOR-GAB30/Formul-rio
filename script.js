@@ -43,11 +43,11 @@ form.addEventListener('submit', function (e) {
 
     if (telefone.length < 10) {
 
-        document.getElementById('erroTelefone').textContent = "Telefone inválido";
+        document.getElementById('erroTelefone').textContent = "Telefone deve ter ao menos 10 caracteres";
         valido = false;
     }
 
-    if (cpf === " " && cpf.length !== 11) {
+    if (cpf === " " && cpf.length < 11) {
 
         document.getElementById('erroCpf').textContent = "CPF é obrigatório e deve conter 11 dígitos";
         valido = false;
@@ -60,7 +60,7 @@ form.addEventListener('submit', function (e) {
 
     if (cidade === " ") {
 
-        alert("Insira uma cidade para continuar");
+        document.getElementById('erroCidade').textContent = 'Insira uma cidade para continuar';
         valido = false;
     }
 
@@ -100,7 +100,12 @@ form.addEventListener('submit', function (e) {
         valido = false;
     }
 
-    resultado.innerHTML = `
+    if (valido) {
+
+        let resultado = document.getElementById('resultado');
+
+
+        resultado.innerHTML = `
 
         Dados enviados: <br>
         Nome: ${nome} <br>
@@ -116,6 +121,7 @@ form.addEventListener('submit', function (e) {
         Motivo: ${motivo} <br>
         `;
 
-    form.reset();
+        form.reset();
 
+    }
 });
