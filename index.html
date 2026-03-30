@@ -49,8 +49,23 @@
             </select>
             <br><br>
 
+            <label for="permite">Permite animal (apartamento):</label>
+               <select id="permite">
+                <option value="">Selecione</option>
+                <option value="casa">permite</option>
+                <option value="ap">não permite</option>
+            </select>
+
             <label for="Quintal">Sua moradia tem quintal:</label>
             <select id="quintal">
+                <option value="">Selecione</option>
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+            </select>
+            <br><br>
+
+            <label for="seguro">Seu quintal é seguro?</label>
+            <select id="seguro">
                 <option value="">Selecione</option>
                 <option value="sim">Sim</option>
                 <option value="nao">Não</option>
@@ -87,6 +102,7 @@
             <div id="erroTermo" class="erro"></div><br>
 
             <button type="submit">Enviar</button>
+
         </form>
 
         <div class="resultado" id="resultado"></div>

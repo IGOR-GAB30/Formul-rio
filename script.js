@@ -12,8 +12,10 @@ form.addEventListener('submit', function (e) {
     let cpf = document.getElementById('cpf').value;
     let idade = document.getElementById('idade').value;
     let cidade = document.getElementById('cidade').value;
-    let moradia = document.getElementById('moradia').value;
+    let tipoMoradia = document.getElementById('tipoMoradia').value;
+    let permite = document.getElementById('permite').value;
     let quintal = document.getElementById('quintal').value;
+    let seguro = document.getElementById('seguro').value;
     let antes = document.getElementById('antes').value;
     let horas = document.getElementById('horas').value;
     let motivo = document.getElementById('motivo').value;
@@ -68,7 +70,7 @@ form.addEventListener('submit', function (e) {
         valido = false;
     }
 
-    if (quintal === "selecione") {
+    if (tipoMoradia === 'casa' && quintal === "selecione") {
 
         alert("Responda se tem quintal em sua moradia para continua")
         valido = false;
@@ -86,6 +88,18 @@ form.addEventListener('submit', function (e) {
         valido = false;
     }
 
+    if (tipoMoradia === 'ap' && permite === 'selecione') {
+
+        alert("Você precisa responder se o seu apartamento permite pets")
+        valido = false;
+    }
+
+    if (quintal === 'sim' && seguro === 'selecione') {
+
+        alert("Você precisa responder se seu quintal é seguro")
+        valido = false;
+    }
+
     resultado.innerHTML = `
 
         Dados enviados: <br>
@@ -96,10 +110,12 @@ form.addEventListener('submit', function (e) {
         Idade: ${idade} <br>
         Cidade: ${cidade} <br>
         Moradia: ${moradia} <br>
+        Permite: ${permite} <br>
+        Seguro: ${seguro} <br>
         Horas: ${horas} <br>
         Motivo: ${motivo} <br>
         `;
-        
+
     form.reset();
 
 });
