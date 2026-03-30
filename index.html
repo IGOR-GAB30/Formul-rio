@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>adoção_Doguinhos</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+    <script src="script.js"></script>
+
     <div class="container">
 
         <h3>Cadastro para Adoção</h3>
@@ -77,7 +82,16 @@
             <textarea id="motivo"></textarea>
             <br><br>
 
+            <label for="Termo">Aceito o termo de responsabilidade:</label>
+            <input type="checkbox" id="termo">
+            <div id="erroTermo" class="erro"></div><br>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <div class="resultado" id="resultado"></div>
     </div>
+
 </body>
 
 </html>
