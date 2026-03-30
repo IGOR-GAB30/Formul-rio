@@ -1,9 +1,11 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>adoção_Doguinhos</title>
 </head>
+
 <body>
     <div class="container">
 
@@ -39,7 +41,43 @@
                 <option value="">Selecione</option>
                 <option value="casa">Casa</option>
                 <option value="ap">Apartamento</option>
-            </select><br><br>
+            </select>
+            <br><br>
 
+            <label for="Quintal">Sua moradia tem quintal:</label>
+            <select id="quintal">
+                <option value="">Selecione</option>
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+            </select>
+            <br><br>
+
+            <label for="Antes">Já teve algum animal antes?:</label>
+            <select id="antes">
+                <option value="">Selecione</option>
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+            </select>
+            <br><br>
+
+            <label for="Horas">Quantas horas você consegue ficar com o seu pet?</label>
+            <input type="time" id="horas" placeholder="Horas">
+            <div id="erroHoras" class="erro"></div><br>
+
+            <label for="Financeiro">Condições financeiras:</label>
+            <select id="financeiro">
+                <option value="">Selecione</option>
+                <option value="boa">Tenho uma boa renda</option>
+                <option value="media">Tenho uma renda média</option>
+                <option value="baixa">Tenho baixa renda</option>
+            </select>
+            <br><br>
+
+            <label for="motivo">Motivo da adoção</label><br>
+            <textarea id="motivo"></textarea>
+            <br><br>
+
+    </div>
 </body>
+
 </html>
